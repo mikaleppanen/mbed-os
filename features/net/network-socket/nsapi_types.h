@@ -141,8 +141,8 @@ typedef enum nsapi_level {
 typedef enum nsapi_option {
     NSAPI_REUSEADDR, /*!< Allow bind to reuse local addresses */
     NSAPI_KEEPALIVE, /*!< Enables sending of keepalive messages */
-    NSAPI_KEEPIDLE,  /*!< Sets timeout value to initiate keepalive */
-    NSAPI_KEEPINTVL, /*!< Sets timeout value for keepalive */
+    NSAPI_KEEPIDLE,  /*!< Sets timeout value to initiate keepalive in seconds */
+    NSAPI_KEEPINTVL, /*!< Sets timeout value for keepalive in seconds */
     NSAPI_LINGER,    /*!< Keeps close from returning until queues empty */
     NSAPI_SNDBUF,    /*!< Sets send buffer size */
     NSAPI_RCVBUF,    /*!< Sets recv buffer size */

@@ -782,7 +782,7 @@ static int lwip_setsockopt(nsapi_stack_t *stack, nsapi_socket_t handle, int leve
                 return NSAPI_ERROR_UNSUPPORTED;
             }
 
-            s->conn->pcb.tcp->keep_idle = *(int*)optval;
+            s->conn->pcb.tcp->keep_idle = (u32_t) 1000 * *(const int *)optval;
             return 0;
 
         case NSAPI_KEEPINTVL:
@@ -790,7 +790,7 @@ static int lwip_setsockopt(nsapi_stack_t *stack, nsapi_socket_t handle, int leve
                 return NSAPI_ERROR_UNSUPPORTED;
             }
 
-            s->conn->pcb.tcp->keep_intvl = *(int*)optval;
+            s->conn->pcb.tcp->keep_intvl = (u32_t) 1000 * *(const int *)optval;
             return 0;
 
         case NSAPI_REUSEADDR:
