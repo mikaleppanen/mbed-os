@@ -3,11 +3,11 @@
     "config": {
         "ipv4-enabled": {
             "help": "Enable IPv4",
-            "value": true
+            "value": false
         },
         "ipv6-enabled": {
             "help": "Enable IPv6",
-            "value": false
+            "value": true
         },
         "ip-ver-pref": {
             "help": "On dual stack system the preferred stack: 4 for IPv4 and 6 for IPv6",
