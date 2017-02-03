@@ -1075,14 +1075,13 @@ void ENET_AddMulticastGroup(ENET_Type *base, uint8_t *address)
             if ((c ^ crc) & 1U)
             {
                 crc >>= 1U;
-                c >>= 1U;
                 crc ^= 0xEDB88320U;
             }
             else
             {
                 crc >>= 1U;
-                c >>= 1U;
             }
+            c >>= 1U;
         }
     }
 
@@ -1114,14 +1113,13 @@ void ENET_LeaveMulticastGroup(ENET_Type *base, uint8_t *address)
             if ((c ^ crc) & 1U)
             {
                 crc >>= 1U;
-                c >>= 1U;
                 crc ^= 0xEDB88320U;
             }
             else
             {
                 crc >>= 1U;
-                c >>= 1U;
             }
+            c >>= 1U;
         }
     }
 
