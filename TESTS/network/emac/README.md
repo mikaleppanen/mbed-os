@@ -45,12 +45,12 @@ The test case passes if there are no responses from the echo server, but further
 
 ### EMAC unicast frame length
  
-1. Sends CTP unicast messages with Ethernet message length from 100 bytes to the maximum [[[What is the maximum? Should you say that here?]]] with 50 bytes increments. 
+1. Sends CTP unicast messages with Ethernet message length from 100 bytes to the maximum defined by the MTU of the EMAC with 50 bytes increments. 
 2. Verifies that all are replied. 
 
 ### EMAC unicast burst
  
-1. Sends CTP unicast messages with Ethernet message length from 100 bytes to the maximum [[Same question here]]]  with 50 bytes increments. 
+1. Sends CTP unicast messages with Ethernet message length from 100 bytes to the maximum defined by the MTU of the EMAC with 50 bytes increments. 
 2. Repeats the sending 10 times. 
 3. Verifies that all are replied. 
 
@@ -78,7 +78,7 @@ Tests memory manager out-of-memory situations. The test case configures the test
 
 Depending on the EMAC implementation, it may or may not allocate memory manager buffers in the link output function. If the memory manager buffers are not allocated, disabling the link output memory allocations in the test does not affect the functionality.
 
-In each test step, the test case sends CTP unicast messages with Ethernet message length from 100 bytes to the maximum [[[Once again, do we need to tell the max]]]  with 50 bytes increments. Memory buffers sent to the EMAC in the `link_out()` function are forced to be non-aligned in this test case.
+In each test step, the test case sends CTP unicast messages with Ethernet message length from 100 bytes to the maximum defined by the MTU of the EMAC with 50 bytes increments. Memory buffers sent to the EMAC in the `link_out()` function are forced to be non-aligned in this test case.
 
 Test steps:
 
