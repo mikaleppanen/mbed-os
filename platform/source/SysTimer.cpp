@@ -195,7 +195,7 @@ void SysTimer<US_IN_TICK, IRQ>::acknowledge_tick()
     // 8-bit counter to save space, and also make sure it we don't
     // try TOO hard to resync if something goes really awry -
     // resync will reset if the count hits 256.
-    if (core_util_atomic_decr_u8(&_unacknowledged_ticks, 1) > 0) {
+    if (core_util_atomic_decr_u16(&_unacknowledged_ticks, 1) > 0) {
         _set_irq_pending();
     }
 }
